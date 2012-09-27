@@ -48,5 +48,35 @@ test.js를 수행했을 때의 결과
 JAML에서는 불가능한 중간 코드 가져오기
 --------------------------------------
 CANNOT USE THIS CODE USING JAML!!!
+```js
+var l;
+Jaml.register('simple', function() {
+	div(
+		h1("Some title"),
+		p("Some exciting paragraph text"),
+		br(),
+		ul(
+			li("First item"),
+			l = li("Second item"), // THIS IS NOT POSSIBLE..
+			li("Third item")
+		)
+	);
+});
+```
 
 But it is ok using $HTML.
+``` js
+var $li;
+var $div = $DIV(
+	$H1('Some title'),
+	$P('Some exciting paragraph text'),
+	$BR(),
+	$UL(
+		$LI('First item'),
+		$li = $LI('Second item'), // IS THIS POSSIBLE?
+		$LI('Third item')
+	)
+);
+$div.appendTo('body');
+$li.text('YEAH!!!'); // YEAH!!!
+```
