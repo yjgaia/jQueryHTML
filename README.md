@@ -1,7 +1,43 @@
 $HTML
 =====
 $HTML is making it easy to generate jQuery object for HTML element in your JavaScript projects.
-faster than JAML, and more powerful(for jQuery user).
+faster than JAML(https://github.com/edspencer/jaml), and more powerful(for jQuery user).
+
+Example
+-------
+This is $HTML code.
+``` js
+var $div = $DIV(
+	$H1('Some title'),
+	$P('Some exciting paragraph text'),
+	$BR(),
+	$UL(
+		$LI('First item'),
+		$LI('Second item'),
+		$LI('Third item')
+	)
+);
+```
+
+And append to body.
+``` js
+$div.appendTo('body');
+```
+
+Here's the output.
+``` html
+<div>
+  <h1>Some title</h1>
+  <p>Some exciting paragraph text</p>
+  <br />
+  <ul>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+  </ul>
+</div>
+```
+
 
 test.js를 수행했을 때의 결과
 -----------------------
