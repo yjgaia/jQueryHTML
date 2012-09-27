@@ -27,17 +27,16 @@ $div.appendTo('body');
 Here's the output.
 ``` html
 <div>
-  <h1>Some title</h1>
-  <p>Some exciting paragraph text</p>
-  <br />
-  <ul>
-    <li>First item</li>
-    <li>Second item</li>
-    <li>Third item</li>
-  </ul>
+	<h1>Some title</h1>
+	<p>Some exciting paragraph text</p>
+	<br />
+	<ul>
+		<li>First item</li>
+		<li>Second item</li>
+		<li>Third item</li>
+	</ul>
 </div>
 ```
-
 
 test.js를 수행했을 때의 결과
 -----------------------
@@ -45,3 +44,9 @@ test.js를 수행했을 때의 결과
 * JAML를 이용한 1000개의 HTML 코드 생성 시간: 1142ms, 코드 생성을 제외한 실제 수행 시간: 888ms
 * $HTML을 이용한 1000개의 HTML 코드 생성 시간: 864ms, 코드 생성을 제외한 실제 수행 시간: 610ms
 * JAML에 비해 $HTML로 HTML코드를 생성하는 시간이 278ms만큼 더 빨라졌습니다. 
+
+JAML에서는 불가능한 중간 코드 가져오기
+--------------------------------------
+CANNOT USE THIS CODE USING JAML!!!
+
+But it is ok using $HTML.
