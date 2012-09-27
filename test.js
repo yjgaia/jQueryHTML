@@ -75,6 +75,8 @@ $(function() {
 	
 	$('body').empty();
 	
+	
+	
 	$DIV({
 		cls: 'ttt'
 		, style: 'color: red'
