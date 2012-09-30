@@ -3,8 +3,8 @@ $HTML
 $HTML is making it easy to generate jQuery object for HTML element in your JavaScript projects.
 faster than JAML(https://github.com/edspencer/jaml), and more powerful(for jQuery user).
 
-Example
--------
+Simple Example
+--------------
 This is $HTML code.
 ``` js
 var $div = $DIV(
@@ -36,6 +36,25 @@ Here's the output.
 		<li>Third item</li>
 	</ul>
 </div>
+```
+
+Attributes Example
+------------------
+``` js
+var $div = $DIV({
+		id: 'layer-1' // #layer-1, this is id attribute;
+		, cls: 'layer-1' // .layer-1, this is class attribute.
+		// ... anything else.
+	}
+	$H1('Some title'),
+	$P('Some exciting paragraph text'),
+	$BR(),
+	$UL(
+		$LI('First item'),
+		$LI('Second item'),
+		$LI('Third item')
+	)
+);
 ```
 
 test.js를 수행했을 때의 결과
