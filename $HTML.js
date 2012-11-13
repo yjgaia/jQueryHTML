@@ -29,12 +29,10 @@ for (var i in $HTML.tags) {
 						html += ' ' + name + '="' + o[attr] + '"';
 					}
 				} else {
-					content += o;
+					a.push(o);
 				}
 			}
-			html += '>';
-			html += content;
-			html += '</' + t + '>';
+			html += '></' + t + '>';
 			
 			var $o = $(html);
 			for (var i in a) {
