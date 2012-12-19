@@ -1,13 +1,5 @@
 var $HTML = {
-	tags : [
-		'div', 'p', 'span', 'a', 'img', 'br', 'hr', 'em', 'strong'
-	    , 'table', 'tr', 'th', 'td', 'thead', 'tbody', 'tfoot'
-	    , 'ul', 'ol', 'li'
-	    , 'dl', 'dt', 'dd'
-	    , 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7'
-	    , 'form', 'fieldset', 'input', 'textarea', 'label', 'select', 'option'
-	    , 'iframe'
-    ]
+	tags : ['div', 'p', 'span', 'a', 'img', 'br', 'hr', 'em', 'strong', 'table', 'tr', 'th', 'td', 'thead', 'tbody', 'tfoot', 'ul', 'ol', 'li', 'dl', 'dt', 'dd', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'form', 'fieldset', 'input', 'textarea', 'label', 'select', 'option', 'iframe', 'button']
 };
 
 for (var i in $HTML.tags) {
@@ -15,25 +7,38 @@ for (var i in $HTML.tags) {
 	var f = window['$' + tag.toUpperCase()] = (function() {
 		var t = tag;
 		return function() {
-			
+
 			var html = '<' + t;
 			var content = '';
 			var a = [];
-			for (var i in arguments) {
+			// this is cannot run ie8
+			// for (var i in arguments) {
+			for (var i = 0; i < arguments.length; i++) {
 				var o = arguments[i];
-				if (o instanceof $) {
+				if ( o instanceof $) {
 					a.push(o);
 				} else if (i == 0 && typeof o === 'object') {
 					for (var attr in o) {
 						var name = attr === 'cls' ? 'class' : attr;
-						html += ' ' + name + '="' + o[attr] + '"';
+						var cont;
+						if (name === 'style' && typeof o[attr] !== 'string' && typeof o[attr] === 'object') {
+							cont = '';
+							for (var sn in o[attr]) {
+								var st = o[attr][sn];
+								st = typeof st === 'number' && sn !== 'zIndex' ? st + 'px' : st;
+								cont += sn.replace(/([A-Z])/g, '-$1').toLowerCase() + ': ' + st + ';';
+							}
+						} else {
+							cont = o[attr];
+						}
+						html += ' ' + name.replace(/([A-Z])/g, '-$1').toLowerCase() + '="' + cont + '"';
 					}
 				} else {
 					a.push(o);
 				}
 			}
 			html += '></' + t + '>';
-			
+
 			var $o = $(html);
 			for (var i in a) {
 				var o = a[i];
