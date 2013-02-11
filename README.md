@@ -57,6 +57,13 @@ var $div = $DIV({
 );
 ```
 
+Coding Warning!
+---------------
+* attribute 'for' -> 'forward'.
+* attribute 'class' -> 'cls'.
+* style attribute 'float' -> 'flt'. 
+
+
 test.js를 수행했을 때의 결과
 -----------------------
 * 정적인 1000개의 HTML 코드 생성 시간: 254ms

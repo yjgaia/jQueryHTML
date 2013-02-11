@@ -19,11 +19,21 @@ for (var i in $HTML.tags) {
 					a.push(o);
 				} else if (i == 0 && typeof o === 'object') {
 					for (var attr in o) {
-						var name = attr === 'cls' ? 'class' : attr;
+						var name;
+						if (attr === 'cls') {
+							name = 'class';
+						} else if (attr === 'forward') {
+							name = 'for';
+						} else {
+							name = attr;
+						}
 						var cont;
 						if (name === 'style' && typeof o[attr] !== 'string' && typeof o[attr] === 'object') {
 							cont = '';
 							for (var sn in o[attr]) {
+								if (sn === 'flt') {
+									sn = 'float';
+								}
 								var st = o[attr][sn];
 								st = typeof st === 'number' && sn !== 'zIndex' ? st + 'px' : st;
 								cont += sn.replace(/([A-Z])/g, '-$1').toLowerCase() + ': ' + st + ';';
