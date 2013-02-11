@@ -45,7 +45,7 @@ var $div = $DIV({
 		id: 'layer-1' // #layer-1, this is id attribute;
 		, cls: 'layer-1' // .layer-1, this is class attribute.
 		// ... anything else.
-	}
+	},
 	$H1('Some title'),
 	$P('Some exciting paragraph text'),
 	$BR(),
@@ -63,6 +63,19 @@ Coding Warning!
 * attribute 'class' -> 'cls'.
 * style attribute 'float' -> 'flt'. 
 
+
+Style Example
+------------------
+``` js
+var $div = $DIV({
+	style: {
+		border: '1px solid black'
+		, color: 'red'
+		, background: 'green'
+		// ... anything else.
+	}
+});
+```
 
 test.js를 수행했을 때의 결과
 -----------------------
