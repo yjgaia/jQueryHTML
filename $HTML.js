@@ -31,10 +31,10 @@ for (var i in $HTML.tags) {
 						if (name === 'style' && typeof o[attr] !== 'string' && typeof o[attr] === 'object') {
 							cont = '';
 							for (var sn in o[attr]) {
+								var st = o[attr][sn];
 								if (sn === 'flt') {
 									sn = 'float';
 								}
-								var st = o[attr][sn];
 								st = typeof st === 'number' && sn !== 'zIndex' ? st + 'px' : st;
 								cont += sn.replace(/([A-Z])/g, '-$1').toLowerCase() + ': ' + st + ';';
 							}
