@@ -1,5 +1,5 @@
 var $HTML = {
-	tags : ['div', 'p', 'span', 'a', 'img', 'br', 'hr', 'em', 'strong', 'table', 'tr', 'th', 'td', 'thead', 'tbody', 'tfoot', 'ul', 'ol', 'li', 'dl', 'dt', 'dd', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'form', 'fieldset', 'input', 'textarea', 'label', 'select', 'option', 'iframe', 'button', 'script']
+	tags : ['div', 'p', 'span', 'a', 'img', 'br', 'hr', 'em', 'strong', 'table', 'tr', 'th', 'td', 'thead', 'tbody', 'tfoot', 'ul', 'ol', 'li', 'dl', 'dt', 'dd', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'form', 'fieldset', 'input', 'textarea', 'label', 'select', 'option', 'iframe', 'button', 'script', 'i']
 };
 
 for (var i in $HTML.tags) {
