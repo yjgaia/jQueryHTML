@@ -86,7 +86,7 @@ test.js를 수행했을 때의 결과
 
 JAML에서는 불가능한 중간 코드 가져오기
 --------------------------------------
-CANNOT USE THIS CODE USING JAML!!!
+Cannot use this code using JAML.
 ```js
 var l;
 Jaml.register('simple', function() {
