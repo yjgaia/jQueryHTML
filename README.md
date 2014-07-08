@@ -119,3 +119,6 @@ var $div = $DIV(
 $div.appendTo('body');
 $li.text('YEAH!!!'); // YEAH!!!
 ```
+
+## License
+[The MIT License](http://opensource.org/licenses/MIT)
