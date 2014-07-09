@@ -77,14 +77,14 @@ var $div = $DIV({
 });
 ```
 
-test.js를 수행했을 때의 결과
+Result from running test.js
 -----------------------
-* 정적인 1000개의 HTML 코드 생성 시간: 254ms
-* JAML를 이용한 1000개의 HTML 코드 생성 시간: 1142ms, 코드 생성을 제외한 실제 수행 시간: 888ms
-* $HTML을 이용한 1000개의 HTML 코드 생성 시간: 864ms, 코드 생성을 제외한 실제 수행 시간: 610ms
-* JAML에 비해 $HTML로 HTML코드를 생성하는 시간이 278ms만큼 더 빨라졌습니다. 
+* static 1000 HTML codes generation time: 254ms
+* 1000 HTML codes generation time using JAML: 1142ms, actual running time except code generation: 888ms
+* 1000 HTML codes generation time using $HTML: 864ms, actual running time except code generation: 610ms
+* HTML codes generation time using $HTML is 278ms faster than using JAML.
 
-JAML에서는 불가능한 중간 코드 가져오기
+Read an inner element that is not allowed in JAML
 --------------------------------------
 Cannot use this code using JAML.
 ```js
